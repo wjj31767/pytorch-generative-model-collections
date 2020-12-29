@@ -77,7 +77,7 @@ def save_images(images, size, image_path):
     return imsave(images, size, image_path)
 
 def imsave(images, size, path):
-    image = np.squeeze(merge(images, size))
+    image = np.squeeze(merge(images, size)).astype(np.uint8)
     return imageio.imwrite(path, image)
 
 def merge(images, size):
